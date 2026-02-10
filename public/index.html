@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complaint Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="panel-toggle">
+  <button id="userBtn" class="active" type="button" onclick="showUser()">User</button>
+  <button id="adminBtn" type="button" onclick="showAdmin()">Admin</button>
+  <div class="slider"></div>
+  </div>
+
+  <div class="app-card">
+  <!-- USER PANEL -->
+  <div id="userPanel">
+    <h2>Submit Complaint</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <input type="text" id="title" placeholder="Complaint Title">
+    <textarea id="description" placeholder="Complaint Description"></textarea>
+
+    <button type="button" onclick="submitComplaint()">Submit</button>
+
+    <p id="msg"></p>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel" style="display:none;">
+    <div class="admin-header">
+        <h2>Admin - Complaints</h2>
+        <span id="adminMsg"></span>
+    </div>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Date</th> 
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="complaintTable"></tbody>
+    </table>
+     <p id="adminMsg"></p>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
